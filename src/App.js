@@ -9,7 +9,7 @@ function App (){
       <CounterHooks initialCount = {0}/>
       <button onClick={()=> setTheme((prevTheme)=>{
         return prevTheme === 'red' ? 'blue' : 'red'
-      })}>Change to { theme }</button>
+      })}>Toggle color</button>
     </ThemeContext.Provider>
   )
 }
