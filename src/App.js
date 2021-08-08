@@ -1,17 +1,7 @@
-import React, { useState } from "react";
-import CounterHooks from "./CounterHooks";
+import React from "react";
 
-export const ThemeContext = React.createContext()
 function App (){
-  const [theme, setTheme] = useState('red')
-  return (
-    <ThemeContext.Provider value={{backgroundColor : theme}}>
-      <CounterHooks initialCount = {0}/>
-      <button onClick={()=> setTheme((prevTheme)=>{
-        return prevTheme === 'red' ? 'blue' : 'red'
-      })}>Toggle color</button>
-    </ThemeContext.Provider>
-  )
+  return null
 }
 
 
@@ -28,5 +18,5 @@ steps for context APIs
 5. Thats it
 
 
-One major difference between useState hooks and context is that we dont have to pass variable such as initialCount
+One major difference between useState hooks and context is that we dont have to pass variable manually such as initialCount
 */
