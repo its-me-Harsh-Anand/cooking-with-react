@@ -14,7 +14,7 @@ const sampleRecipe = [
       name: "Plain Rice",
       cookTime: "1:45",
       servings: 3,
-      instructions: "1. Put water into cooker \n 2. Put cooker inside oven \n 3. Eat Rice",
+      instructions: "1. Put water into cooker\n2. Put cooker inside oven\n3. Eat Rice",
       ingredients: [
         {
           id: 1,
@@ -33,7 +33,7 @@ const sampleRecipe = [
       name: "Veg Momos",
       cookTime: "5:00",
       servings: 5,
-      instructions: "1. Put momos into cooker \n 2. Put cooker over gas \n 3. Eat and enjoy momos",
+      instructions: "1. Put momos into cooker\n2. Put cooker over gas\n3. Eat and enjoy momos",
       ingredients: [
         {
           id: 1,

@@ -11,7 +11,12 @@
 .btn--primary{
     background-color: hsl(200, 100%, 50%);
 }
-.btn:hover{
+.btn--primary:hover{
     background-color: hsl(200, 50%, 50%);
-
+}
+.btn--danger{
+    background-color: hsl(0, 100%, 50%);
+}
+.btn--danger:hover{
+    background-color: hsl(0, 50%, 50%);
 }
