@@ -15,8 +15,10 @@ function App (){
     // handleRecipeAdd:handleRecipeAdd, both are similar
     handleRecipeAdd,
     handleRecipeDelete,
-    handleRecipeSelect
+    handleRecipeSelect,
+    handleRecipeChange
   }
+ 
   useEffect(()=>{
     const recipeJSONfromLS = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
     if(recipeJSONfromLS != null){
@@ -31,27 +33,39 @@ function App (){
   function handleRecipeSelect(id){ 
     setSelectedRecipeId(id)
   }
+
+  function handleRecipeChange(id, editRecipe){
+    const newRecipes = [...recipe]
+    const index = newRecipes.findIndex(r=> r.id === id)
+    newRecipes[index] = editRecipe
+    setRecipe(newRecipes)
+  }
+
   function handleRecipeAdd(){
     const newRecipe = {
       id: uuidv4(),
-      name: "Name",
-      cookTime: "1:00",
-      servings: 1,
-      instructions: "instructions",
+      name: "",
+      cookTime: "",
+      servings: null,
+      instructions: "",
       ingredients: [
         {
           id: uuidv4(),
-          name: "ing. name",
-          amount: "1 kg"
+          name: "",
+          amount: ""
         }
       ]
     }
+    setSelectedRecipeId(newRecipe.id)
     // recipe.push(newRecipe) 
     //this above will not work as this will only push but not re-render our page but setRecipe will push as well as re-render our page
     setRecipe([...recipe, newRecipe])
     //In above line, ...recipe tells to take all the recipe present in our recipe array and add a newRecipe to make a brand new array
   }
   function handleRecipeDelete(id){
+    if(selectedRecipeId != null && selectedRecipeId === id){
+      setSelectedRecipeId(undefined)
+    }
     setRecipe(recipe.filter(recipe=> recipe.id !== id))   
   }
   return (
